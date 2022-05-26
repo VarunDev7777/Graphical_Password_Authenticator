@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-.loginContainer{
+.loginContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +9,8 @@
     min-height: 100vh;
     font-family: 'Roboto';
     overflow: scroll;
-    .logo{
+
+    .logo {
         height: 70px;
         width: 70px;
         background: linear-gradient(to bottom, #f7f7f7, #e8e8e8);
@@ -19,16 +20,16 @@
         align-items: center;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 0 6px  #00000029;
+        box-shadow: 0 0 6px #00000029;
 
-        .centerCircle{
+        .centerCircle {
             height: 50%;
             width: 50%;
             border-radius: 50%;
-            background-color: #684DB4;  
+            background-color: #684DB4;
         }
 
-        .glassBox{
+        .glassBox {
             width: 100%;
             height: 50%;
             position: absolute;
@@ -38,26 +39,26 @@
         }
     }
 
-    #appname{
+    #appname {
         font-size: 2rem;
         font-weight: 300;
         margin: 1rem 0;
     }
 
-    .userInput{
+    .userInput {
         display: flex;
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
 
-        .formSubContainer{
+        .formSubContainer {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
             position: relative;
 
-            .errContainer{
+            .errContainer {
                 position: absolute;
                 top: 15px;
                 right: 0;
@@ -66,12 +67,12 @@
             }
         }
 
-        label{
+        label {
             margin: 0.5rem 0;
             font-weight: 100;
         }
 
-        .formInput{
+        .formInput {
             padding: 0.5rem;
             width: 300px;
             font-size: 16px;
@@ -80,12 +81,12 @@
             border: 1px solid #e1e1e1;
         }
 
-        select{
+        select {
             width: 320px !important;
         }
     }
 
-    .imgBox{
+    .imgBox {
         margin: 1.5rem 0;
         padding: 1rem;
         border-radius: 15px;
@@ -95,32 +96,64 @@
         max-height: 50vh;
         max-width: 50vw;
         overflow-x: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
-        .imagecatcontainer{
-            width: 100%;
+        .imagecatcontainer {
             height: 100%;
-            margin: 0.5rem 0 ;
+            margin: 0.5rem 0;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
+            flex-shrink: 1;
+            position: relative;
 
-            .imgMain{
-                padding: 1rem;
+            .selectedImg {
+                position: absolute;
+                top: -10px;
+                right: -5px;
+                height: 30px;
+                width: 30px;
+                background-color: #3399ff;
+                border-radius: 50%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10;
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                    filter: invert(1);
+                    pointer-events: none;
+                }
+            }
+
+            .imgMain {
+                padding: 5rem;
                 border-radius: 10px;
                 cursor: pointer;
-                img{
-                    max-width: 150px;
-                    height: 100%;
-                    margin: 0.5rem;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                border: 1px solid #e1e1e1;
+                margin: 0 0.5rem;
+
+                &:hover {
+                    transform: scale(1.2);
                 }
 
-                &:hover{
-                    box-shadow: 0 0px 6px #00000029;
+                &:active {
+                    transform: scale(1.1);
                 }
             }
         }
     }
 
-    .submitbutton{
+    .submitbutton {
         width: 320px;
         padding: 0.5rem;
         font-size: 1.2rem;
@@ -132,7 +165,7 @@
         border-radius: 0.5rem;
         transition: all 0.3s ease;
 
-        &:hover{
+        &:hover {
             background-color: #684DB4CC;
         }
     }
