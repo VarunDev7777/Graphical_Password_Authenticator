@@ -103,12 +103,17 @@ const Login = () => {
                             icon: 'success'
                         })
                     }).catch(e => {
-                        console.log(e)
                         Swal.fire({
-                            title: 'Registration Failed',
-                            text: 'Please try again',
+                            title: 'Authentication Failed',
+                            text: `You have entered an invalid password. Please try again.`,
                             icon: 'error'
                         })
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Authentication Failed',
+                        text: 'Please try again',
+                        icon: 'error'
                     })
                 }
             } catch (error) {
